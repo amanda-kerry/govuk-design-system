@@ -8,18 +8,21 @@
     If you would prefer to email us you can get in touch on <a class="govuk-link app-contact-panel__link" href="mailto:govuk-design-system-support@digital.cabinet-office.gov.uk" data-hsupport="email">govuk-design-system-support@digital.cabinet-office.gov.uk</a>.  
   </p>
 
-  <h2 class="app-contact-panel__heading">Share research or discuss ‘{{title}}’</h2>
-
-  <p class="govuk-body app-contact-panel__body">
-   {% if backlog_issue_id %}
-      <a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system-backlog/issues/{{backlog_issue_id}}">Discuss ‘{{title}}’ on GitHub</a>
+  {% if section === 'Styles' or section === 'Components' or section === 'Patterns' %}
+    {% if backlog_issue_id %}
+      <h2 class="app-contact-panel__heading">Share research or discuss ‘{{title}}’</h2>
+      
+      <p class="govuk-body app-contact-panel__body">
+          <a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system-backlog/issues/{{backlog_issue_id}}">Discuss ‘{{title}}’ on GitHub</a>
+        
+      </p>
     {% endif %}
-  </p>
+    
+    <h2 class="app-contact-panel__heading">Suggest an edit to the ‘{{title}}’ guidance</h2>
 
-  <h2 class="app-contact-panel__heading">Suggest an edit to the ‘{{title}}’ guidance</h2>
-
-  <p class="govuk-body app-contact-panel__body">
-    <a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system/edit/master/src/{{section|lower}}/{{title|lower}}/index.md.njk">Suggest an edit to this guidance</a> or <a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system/edit/master/src/{{section|lower}}/{{title|lower}}/index.md.njk">find out how to suggest an edit to this guidance</a>
-  </p>
+    <p class="govuk-body app-contact-panel__body">
+      <a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system/edit/master/src/{{section|lower}}/{{title|lower}}/index.md.njk">Suggest an edit to this guidance</a> or <a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system/edit/master/src/{{section|lower}}/{{title|lower}}/index.md.njk">find out how to suggest an edit to this guidance</a>
+    </p>
+  {% endif %}
 
 </div>
