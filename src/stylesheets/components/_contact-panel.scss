@@ -2,29 +2,25 @@
 .app-contact-panel {
   @include govuk-responsive-margin(6, "top");
   @include govuk-responsive-margin(6, "bottom");
-  @include govuk-responsive-padding(3);
-  background-color: govuk-colour("blue");
+  @include govuk-responsive-padding(6);
+  background-color: govuk-colour("grey-4");
 
   .app-contact-panel__heading,
   .app-contact-panel__body,
   .app-contact-panel__link {
-    color: govuk-colour("white");
-  }
-
-  .app-contact-panel__link:hover {
-    color: lighten(govuk-colour("light-blue"), 45%);
-  }
-
-  .app-contact-panel__link:focus {
-    color: $govuk-focus-text-colour;
+    max-width: 100%;
   }
 }
 
 .app-contact-panel__heading {
   @extend %govuk-heading-m;
+  padding-top: 10px;
+
+  &:first-child {
+    padding-top: 0;
+  }
 }
 
-.app-contact-panel__body {
-  @include govuk-font(19);
-  margin: 0;
+.app-contact-panel__body:last-child {
+  margin-bottom: 0;
 }
