@@ -1,28 +1,28 @@
+{% if section === 'Styles' or section === 'Components' or section === 'Patterns'%}
+  <h2 class="govuk-heading-l govuk-!-padding-top-4">Help improve this {% if section === 'Styles' %}page{% endif %}{% if section === 'Components' %}component{% endif %}{% if section === 'Patterns' %}pattern{% endif %}</h2>
 
-<h2 class="govuk-heading-l govuk-!-padding-top-4">Help improve this {% if section === 'Styles' %}page{% endif %}{% if section === 'Components' %}component{% endif %}{% if section === 'Patterns' %}pattern{% endif %}</h2>
+  {% if backlog_issue_id %}
+    <p class="govuk-body">
+    To help make sure the {{title}} page is useful, relevant and up to date, you can:
+    </p>
 
-{% if backlog_issue_id %}
-  <p class="govuk-body">
-  To help make sure the {{title}} page is useful, relevant and up to date, you can:
-  </p>
-
-  <ul class="govuk-list govuk-list--bullet">
-    <li>
-      <a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system-backlog/issues/{{backlog_issue_id}}">share research or feedback about {{title}} on GitHub</a>
-    </li>
-    <li>
-      <a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system/edit/master/src/{{section|lower}}/{{title|lower}}/index.md.njk">suggest a change to this guidance in GitHub</a>
-    </li>
-</ul>
-{% else %}
-  <p class="govuk-body">
-    To help make sure the {{title}} page is useful, relevant and up to date, you can <a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system/edit/master/src/{{section|lower}}/{{title|lower}}/index.md.njk">suggest a change to this guidance in GitHub</a>
-  </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system-backlog/issues/{{backlog_issue_id}}">share research or feedback about {{title}} on GitHub</a>
+      </li>
+      <li>
+        <a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system/edit/master/src/{{section|lower}}/{{title|lower|replace(" ", "-")}}/index.md.njk">suggest a change to this guidance in GitHub</a>
+      </li>
+  </ul>
+  {% else %}
+    <p class="govuk-body">
+      To help make sure the {{title}} page is useful, relevant and up to date, you can <a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system/edit/master/src/{{section|lower}}/{{title|lower|replace(" ", "-")}}/index.md.njk">suggest a change to this guidance in GitHub</a>
+    </p>
+  {% endif %}
 {% endif %}
 
-
 <p class="govuk-body app-contact-panel__body">
-If you have not used GitHub before, read step by step instructions on <br><a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system/edit/master/src/{{section|lower}}/{{title|lower}}/index.md.njk">how to suggest content changes using GitHub</a>.
+If you have not used GitHub before, read step by step instructions on <br><a class="govuk-link app-contact-panel__link" href="/community/suggest-a-content-change-using-github/">how to suggest content changes using GitHub</a>.
 </p>
 
 <div class="app-contact-panel">
