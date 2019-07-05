@@ -1,28 +1,69 @@
 <div class="app-contact-panel">
-  <h2 class="app-contact-panel__heading">Get help</h2>
-  
-  <p class="govuk-body app-contact-panel__body">
-    If you’ve got a question related to the GOV.UK Design System you can contact the team on the <a class="govuk-link app-contact-panel__link" href="https://ukgovernmentdigital.slack.com/app_redirect?channel=govuk-design-system" data-hsupport="slack">#govuk-design-system channel on cross-government Slack</a>.
-  </p>
-  <p class="govuk-body app-contact-panel__body">
-    If you would prefer to email us you can get in touch on <a class="govuk-link app-contact-panel__link" href="mailto:govuk-design-system-support@digital.cabinet-office.gov.uk" data-hsupport="email">govuk-design-system-support@digital.cabinet-office.gov.uk</a>.  
-  </p>
 
-  {% if section === 'Styles' or section === 'Components' or section === 'Patterns' %}
+    {% if section === 'Styles' %}
     {% if backlog_issue_id %}
-      <h2 class="app-contact-panel__heading">Share research or discuss ‘{{title}}’</h2>
-      
+      <h2 class="app-contact-panel__heading">Help improve this page</h2>
+
       <p class="govuk-body app-contact-panel__body">
-          <a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system-backlog/issues/{{backlog_issue_id}}">Discuss ‘{{title}}’ on GitHub</a>
-        
+      To help make sure the {{title}} page is useful, relevant and up to date, you can:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system-backlog/issues/{{backlog_issue_id}}">share research or feedback about {{title}} on GitHub</a>
+        </li>
+        <li><a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system/edit/master/src/{{section|lower}}/{{title|lower}}/index.md.njk">suggest a change to this guidance in GitHub</a></li>
+      </ul>
+      <p class="govuk-body app-contact-panel__body">
+      If you have not used GitHub before, read step by step instructions on <br><a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system/edit/master/src/{{section|lower}}/{{title|lower}}/index.md.njk">how to suggest content changes using GitHub</a>.
       </p>
     {% endif %}
-    
-    <h2 class="app-contact-panel__heading">Suggest an edit to the ‘{{title}}’ guidance</h2>
-
-    <p class="govuk-body app-contact-panel__body">
-      <a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system/edit/master/src/{{section|lower}}/{{title|lower}}/index.md.njk">Suggest an edit to this guidance</a> or <a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system/edit/master/src/{{section|lower}}/{{title|lower}}/index.md.njk">find out how to suggest an edit to this guidance</a>
-    </p>
   {% endif %}
 
+  {% if section === 'Components' %}
+    {% if backlog_issue_id %}
+      <h2 class="app-contact-panel__heading">Help improve this component</h2>
+
+      <p class="govuk-body app-contact-panel__body">
+      To help make sure the {{title}} component is useful, relevant and up to date, you can:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system-backlog/issues/{{backlog_issue_id}}">share research or feedback about {{title}} on GitHub</a>
+        </li>
+        <li><a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system/edit/master/src/{{section|lower}}/{{title|lower}}/index.md.njk">suggest a change to this guidance in GitHub</a></li>
+      </ul>
+      <p class="govuk-body app-contact-panel__body">
+      If you have not used GitHub before, read step by step instructions on <br><a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system/edit/master/src/{{section|lower}}/{{title|lower}}/index.md.njk">how to suggest content changes using GitHub</a>.
+      </p>
+    {% endif %}
+  {% endif %}
+
+    {% if section === 'Patterns' %}
+    {% if backlog_issue_id %}
+      <h2 class="app-contact-panel__heading">Help improve this pattern</h2>
+
+      <p class="govuk-body app-contact-panel__body">
+      To help make sure the {{title}} pattern is useful, relevant and up to date, you can:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system-backlog/issues/{{backlog_issue_id}}">share research or feedback about the {{title}} pattern on GitHub</a>
+        </li>
+        <li><a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system/edit/master/src/{{section|lower}}/{{title|lower}}/index.md.njk">suggest a change to this guidance in GitHub</a></li>
+      </ul>
+      <p class="govuk-body app-contact-panel__body">
+      If you have not used GitHub before, read step by step instructions on <br><a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system/edit/master/src/{{section|lower}}/{{title|lower}}/index.md.njk">how to suggest content changes using GitHub</a>.
+      </p>
+    {% endif %}
+  {% endif %}
+ 
+  <h2 class="app-contact-panel__heading">Need help?</h2>
+  
+  <p class="govuk-body app-contact-panel__body">
+    If you’ve got a question about the GOV.UK Design System you can contact the team:
+  </p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>on <a class="govuk-link app-contact-panel__link" href="https://ukgovernmentdigital.slack.com/app_redirect?channel=govuk-design-system" data-hsupport="slack">#govuk-design-system channel on cross-government Slack</a></li>
+    <li>by email at <a class="govuk-link app-contact-panel__link" href="mailto:govuk-design-system-support@digital.cabinet-office.gov.uk" data-hsupport="email">govuk-design-system-support@digital.cabinet-office.gov.uk</a>.</li>
+  </ul>
 </div>
