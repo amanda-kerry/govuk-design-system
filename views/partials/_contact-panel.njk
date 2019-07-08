@@ -10,12 +10,15 @@
         <a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system-backlog/issues/{{backlog_issue_id}}">share research or feedback about {% if section === 'Components' or section === 'Patterns' %}the {% endif %}{{title}}{% if section === 'Components' %} component{% endif %}{% if section === 'Patterns' %} pattern{% endif %} on GitHub</a>
       </li>
       <li>
-        <a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system/edit/master/src/{{section|lower}}/{{title|lower|replace(" ", "-")}}/index.md.njk">suggest a change to this guidance in GitHub</a>
+        <a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system/edit/master/src/{{section|lower}}/{{title|lower|replace(" ", "-")}}/index.md.njk">suggest a change to this guidance</a> - read more about <a class="govuk-link app-contact-panel__link" href="/community/suggest-a-content-change-using-github/">how to suggest changes in GitHub</a>
       </li>
     </ul>
-    <p class="govuk-body app-contact-panel__body">
-    If you have not used GitHub before, read step by step instructions on <br><a class="govuk-link app-contact-panel__link" href="/community/suggest-a-content-change-using-github/">how to suggest content changes using GitHub</a>.
-    </p>
+  {% else %}
+      <p class="govuk-body">
+        If you spot a problem with the {{title}} guidance you can <a class="govuk-link app-contact-panel__link" href="https://github.com/alphagov/govuk-design-system/edit/master/src/{{section|lower}}/{{title|lower|replace(" ", "-")}}/index.md.njk">suggest a change</a>.
+        </p>
+        <p class="govuk-body">If you're not sure how to do this, read guidance on <a class="govuk-link app-contact-panel__link" href="/community/suggest-a-content-change-using-github/">how to suggest changes in GitHub</a>.
+      </p>
   {% endif %}
 {% endif %}
 
